@@ -1,79 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>FROMULARIO SENA V1</h1>
-      <p class="subtitle">GRACIAS POR DEJAR SUS DATOS</p>
-      <form>
-        <label for="name">Nombre</label>
-        <input
-          type="text"
-          id="name"
-          placeholder="Por favor, introduzca su nombre"
-        />
+    <form id="survey-form" class="formulario">
+      <label for="nombre">Name</label>
+      <input type="text" id="nombre" placeholder="Please enter your name" />
 
-        <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Por favor, introduzca su Email"
-        />
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Please enter your email" />
 
-        <label for="age">Edad</label>
-        <input
-          type="number"
-          id="age"
-          placeholder="Por favor, introduzca su Edad"
-        />
+      <label for="edad">Age</label>
+      <input type="number" id="edad" placeholder="Please enter your age" />
 
-        <label for="option">Elige una opción</label>
-        <select id="option">
-          <option>Seleccione una opcion</option>
-          <option>Opcion 1</option>
-          <option>Opcion 2</option>
-          <option>Opcion 3</option>
-        </select>
+      <label for="opcion">Choose an option</label>
+      <select id="opcion">
+        <option>Select One Option</option>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
 
-        <p>¿Planeas comprar un coche nuevo en los próximos 5 años?</p>
-        <div class="radio-group">
-          <label><input type="radio" name="buy_car" /> Si</label>
-          <label><input type="radio" name="buy_car" /> No</label>
-          <label><input type="radio" name="buy_car" /> Quizás</label>
+      <div class="pregunta" id="pregunta-nuevo-auto">
+        <span>Do you plan to buy a new car in the next 5 years?</span>
+        <div class="opciones-radio" id="opciones-nuevo-auto">
+          <label><input type="radio" name="nuevo_auto" id="nuevo_auto_yes" /> Yes</label>
+          <label><input type="radio" name="nuevo_auto" id="nuevo_auto_no" /> No</label>
+          <label><input type="radio" name="nuevo_auto" id="nuevo_auto_maybe" /> Maybe</label>
         </div>
+      </div>
 
-        <label for="car-brand">¿Cuál es tu marca de coche favorita?</label>
-        <select id="car-brand">
-          <option>Seleccione una Opcion</option>
-          <option>Toyota</option>
-          <option>BMW</option>
-          <option>Chevrolet</option>
-          <option>Otro</option>
-        </select>
+      <label for="marca">What is your favorite car brand?</label>
+      <select id="marca">
+        <option>Select One Option</option>
+        <option>Toyota</option>
+        <option>Ford</option>
+        <option>Chevrolet</option>
+        <option>Other</option>
+      </select>
 
-        <p>¿Qué tipo de medio de transporte posees?</p>
-        <div class="checkbox-group">
-          <label><input type="checkbox" /> Carro</label>
-          <label><input type="checkbox" /> Barco</label>
-          <label><input type="checkbox" /> Bicicleta</label>
-          <label><input type="checkbox" /> Motocicleta</label>
-          <label><input type="checkbox" /> Avión</label>
-          <label><input type="checkbox" /> Bicicleta</label>
+      <div class="pregunta" id="pregunta-transporte">
+        <span>What type of means of transportation do you own?</span>
+        <div class="opciones-checkbox" id="opciones-transporte">
+          <label><input type="checkbox" id="transporte_car" /> Car</label>
+          <label><input type="checkbox" id="transporte_boat" /> Boat</label>
+          <label><input type="checkbox" id="transporte_bicycle" /> Bicycle</label>
+          <label><input type="checkbox" id="transporte_motorcycle" /> Motorcycle</label>
+          <label><input type="checkbox" id="transporte_plane" /> Plane</label>
+          <label><input type="checkbox" id="transporte_bike" /> Bike</label>
         </div>
+      </div>
 
-        <label for="comments">¿Algún comentario/sugerencia?</label>
-        <textarea
-          id="comments"
-          placeholder="Por favor, ingresa tus comentarios"
-        ></textarea>
-
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+      <label for="comentarios">Any comments or suggestions?</label>
+      <textarea
+        id="comentarios"
+        placeholder="Please enter your comments"
+      ></textarea>
+      <button type="submit" id="submit" value="submit">Submit</button>
+    </form> 
+      <div id="modal-success" class="modal hidden">
+        <div class="modal-content">
+          <h2>¡Datos enviados con éxito!</h2>
+          <button id="close-modal">Cerrar</button>
+        </div>
+      </div>
   </body>
+  <script type="module" src="main.js"></script>
 </html>
+
